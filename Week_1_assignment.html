@@ -44,9 +44,40 @@
     <ul id="countList"></ul>
 
     <script>
-        const startCodon = "ATG";
-        const stopCodon = "TAA";
-        const chunkSize = 30;
+        let sequence = {
+            length: Math.round(148 / 3) * 3,
+            sequenceTypes: ["A", "C", "G", "T"],
+            startCodon: "ATG",
+            stopCodon: "TAA",
+            get randomSequence() {
+                let seq = "";
+                for (let i = 0; i < this.length; i++) {
+                    seq += this.sequenceTypes[Math.floor(Math.random()*this.sequenceTypes.length)]
+                }
+                if (Math.random() > 0.5) {
+                    seq = seq.substring(0, 6) + this.startCodon + seq.substring(6 + this.startCodon.length);
+                    seq = seq.substring(0, 144) + this.stopCodon + seq.substring(144 + this.stopCodon.length);
+                } else {
+                    seq = seq.substring(0, 0) + this.startCodon + seq.substring(0 + this.startCodon.length);
+                    seq = seq.substring(0, 141) + this.stopCodon + seq.substring(141 + this.stopCodon.length);
+                }
+                this.seq = seq;
+                return seq;
+            },
+            get countDict() {
+                let counts = {};
+                for (const aa of this.seq.match(/.{1,3}/g)) {
+                    counts[aa] = counts[aa] ? counts[aa] + 1 : 1;
+                }
+                return counts;
+            },
+            get gcCOunt() {
+                return (this.seq.match(/C/g) || []).length + (this.seq.match(/G/g) || []).length;
+            },
+            get proteinLength() {
+                return (this.seq.lastIndexOf(this.stopCodon) + 3 - this.seq.indexOf(this.startCodon)) / 3
+            },
+        }
 
         let sequenceElem = document.getElementById("sequence");
         let percentageElem = document.getElementById("gcPercentage");
@@ -54,33 +85,16 @@
         let sequenceLengthElem = document.getElementById("sequenceLength");
         let countListElem = document.getElementById("countList");
 
-        const length = Math.round(148 / 3) * 3;
-        const DNA = ["A", "C", "G", "T"]
-        let seq = "";
-        for (let i = 0; i < length; i++) {
-            seq += DNA[Math.floor(Math.random()*DNA.length)]
-        }
-
-        let indexStart = Math.floor(Math.random() * (40 - 0 + 1) + 0)
-        let indexStop = Math.floor(Math.random() * ((length - 3) - (length - 40) + 1) + (length - 40))
-        seq = seq.substring(0, indexStart) + startCodon + seq.substring(indexStart + startCodon.length);
-        seq = seq.substring(0, indexStop) + stopCodon + seq.substring(indexStop + stopCodon.length);
-        sequenceElem.innerHTML = seq;
-
-        const GCCOunt = (seq.match(/C/g) || []).length + (seq.match(/G/g) || []).length;
-        percentageElem.innerHTML = `GC Percentage: ${(GCCOunt / length * 100).toFixed(2)}%`;
         
-        proteinElem.innerHTML = `Protein length: ${(seq.lastIndexOf(stopCodon) + 2) - seq.indexOf(startCodon)}`;
-        sequenceLengthElem.innerHTML = `Sequence length: ${length}`;
+        sequenceElem.innerHTML = sequence.randomSequence;
+        percentageElem.innerHTML = `GC Percentage: ${(sequence.gcCOunt / sequence.length * 100).toFixed(2)}%`;
+        proteinElem.innerHTML = `Protein length: ${sequence.proteinLength}`;
+        sequenceLengthElem.innerHTML = `Sequence length: ${sequence.length}`;
 
-
-        let counts = {};
-        for (const aa of seq.match(/.{1,3}/g)) {
-            counts[aa] = counts[aa] ? counts[aa] + 1 : 1;
-        }
-        Object.keys(counts).map(key => {
+        
+        Object.keys(sequence.countDict).map(key => {
             var entry = document.createElement('li');
-            entry.appendChild(document.createTextNode(`${key}: ${counts[key]}\n`));
+            entry.appendChild(document.createTextNode(`${key}: ${sequence.countDict[key]}\n`));
             countListElem.appendChild(entry);
         })
     </script>
