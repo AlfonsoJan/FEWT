@@ -5,8 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'Roboto Mono', monospace;
+    }
+</style>
 <body>
+    <form id="sequence-length">
+        <label for="length">Sequence Length (between 10.000 and 50.000):</label>
+        <input type="number" id="length" name="length" min="10000" max="50000">
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    <h2 id="sequence-header"></h2>
+    <p id="sequence"></p>
+
     
+    <script>
+        let submitButton = document.getElementById("submit");
+        submitButton.disabled = true;
+        let formElement = document.getElementById("sequence-length");
+        let inputElem = document.getElementById("length");
+        inputElem.addEventListener('input', () => {
+            submitButton.disabled = true;
+            let number = inputElem.value;
+            if (!isInt(number)) {return;}
+            if (number < 10000) {return;}
+            submitButton.disabled = false;
+        });
+        formElement.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let number = inputElem.value;
+            sequence.randomSequence = number;
+            console.log(sequence)
+        })
+        let sequence = {
+            sequenceTypes: ["A", "C", "G", "T"],
+            startCodon: "ATG",
+            stopCodon: "TAA",
+            set randomSequence(length) {
+                this.length = Math.round(length / 3) * 3
+                let seq = "";
+                for (let i = 0; i < this.length; i++) {
+                    seq += this.sequenceTypes[Math.floor(Math.random()*this.sequenceTypes.length)]
+                }
+                seq = this.startCodon + seq + this.stopCodon;
+                this.seq = seq;
+                return seq;
+            }
+        }
+
+        function isInt(value) {
+            return !isNaN(value) && (function(x) { return (x | 0) === x; })(parseFloat(value))
+        }
+    </script>
 </body>
 </html>
