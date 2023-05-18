@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href=" https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css " rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<style>
+    #sequence {
+        text-align: center;
+        max-width: 1000px;
+        overflow-wrap: break-word;
+        padding: 10px 20px;
+        max-height: 500px;
+        overflow-y: auto;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        min-height: 100vh;
+        font-family: 'Roboto Mono', monospace;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    li {
+        list-style-type: none;
+    }
+</style>
+<body>
+    <form id="sequence-length">
+        <label for="length">Sequence Length (between 10.000 and 50.000):</label>
+        <input type="number" id="length" name="length" min="10000" max="50000">
+        <button type="submit" id="generate-sequence">Generate</button>
+    </form>
+    <form id="enzym-call">
+        <label for="enzyme">Enzyme name</label>
+        <select name="enzyme" id="enzyme">
+            <option value="AprI">AprI</option>
+            <option value="BamHI">BamHI</option>
+            <option value="EcoRI">EcoRI</option>
+            <option value="EcoRII">EcoRII</option>
+            <option value="HindIII">HindIII</option>
+            <option value="PstI">PstI</option>
+            <option value="SacI">SacI</option>
+            <option value="TaqI">TaqI</option>
+            <option value="XbaI">XbaI</option>
+        </select>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    <ul id="countList"></ul>
+    <h2 id="sequence-header"></h2>
+    <p id="sequence"></p>
+
+    <script src=" https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js "></script>
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": false,
+            "positionClass": "toast-bottom-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "linear",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+        let enzymeForm = document.getElementById("enzym-call")
+        enzymeForm.style.display = 'none';
+        let generateSeqButton = document.getElementById("generate-sequence");
+        generateSeqButton.disabled = true;
+        let formElement = document.getElementById("sequence-length");
+        let enzymeInput = document.getElementById("enzyme");
+        let inputElem = document.getElementById("length");
+        let sequenceElem = document.getElementById("sequence");
+        let getEnzymButton = document.getElementById("submit");
+
+        let sequence = {
+            sequenceTypes: ["A", "C", "G", "T"],
+            startCodon: "ATG",
+            stopCodon: "TAA",
+            set randomSequence(length) {
+                this.length = Math.round(length / 3) * 3
+                let seq = "";
+                for (let i = 0; i < this.length; i++) {
+                    seq += this.sequenceTypes[Math.floor(Math.random()*this.sequenceTypes.length)]
+                }
+                seq = this.startCodon + seq + this.stopCodon;
+                this.seq = seq;
+                return seq;
+            }
+        }
+
+        function isInt(value) {
+            return !isNaN(value) && (function(x) { return (x | 0) === x; })(parseFloat(value))
+        }
+
+        inputElem.addEventListener('input', () => {
+            generateSeqButton.disabled = true;
+            let number = inputElem.value;
+            if (!isInt(number)) {return;}
+            if (number < 10000) {return;}
+            generateSeqButton.disabled = false;
+        });
+        formElement.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let number = inputElem.value;
+            sequence.randomSequence = number;
+            sequenceElem.innerHTML = sequence.seq;
+            enzymeForm.style.display = '';
+        })
+        enzymeForm.addEventListener('submit', getEnzym);
+        function getEnzym(e) {
+            e.preventDefault();
+            getEnzymButton.disabled = true;
+            let enzym = enzymeInput.value;
+            loadEnzym(enzym);
+        };
+        async function loadEnzym(enzym) {
+            let url = `https://bioinf.mocklab.io/api/v2/enzymes/${enzym}`;
+            const controller = new AbortController();
+            // AFTER 4 SECONDS IT WILL THROW A REJECT
+            const timeoutId = setTimeout(() => controller.abort(), 4000)
+            try {
+                let response = await fetch(url, {method: "GET", signal: controller.signal});
+                if (response.status != 200) {
+                    return await Promise.reject(response);
+                }
+                parseEnzym(enzym, response);
+                
+            } catch (err) {
+                if (err.name === 'AbortError') {
+                    toastr.error(`A timeout occured!`);
+                } else if (err.name === 'TypeError') {
+                    toastr.error(`A CORS error happened!`);
+                } else {
+                    toastr.error(err.statusText);
+                }
+            } finally {
+                getEnzymButton.disabled = false;
+            }
+        }
+        async function parseEnzym(enzym, res) {
+            try {
+                let result = await res.json();
+                let cuttinSites = {};
+                cuttinSites[enzym] = {"sites": [], "location": []};
+                result.site.forEach(element => {
+                    let site = element.replace("^", "");
+                    cuttinSites[enzym].sites.push(site);
+                    let re = new RegExp(site, "g");
+                    let matches = [...sequence.seq.matchAll(re)];
+                    let indexes = [];
+                    matches.forEach((match) => {
+                        indexes.push(match.index);
+                    });
+                    cuttinSites[enzym].location.push(indexes);
+                    parseData(cuttinSites);
+                });
+            } catch(err) {
+                toastr.error(`Error while parsing the data`);
+            }
+        }
+
+        function parseData(cuttinSites) {
+            let countListElem = document.getElementById("countList");
+            Object.keys(cuttinSites).forEach(function(key, index) {
+                cuttinSites[key].sites.forEach(function (site, i) {
+                    let entry = document.createElement('li');
+                    let text;
+                    if (site === "-") {
+                        text = `Enzym '${key}' not found.`
+                    } else if (cuttinSites[key].location[i].length < 1) {
+                        text = `${key}'s site '${site}' is not present in the sequence.`
+                    } else {
+                        text = `${key}'s site '${site}' is present in the sequence (position(s) ${cuttinSites[key].location[i]})`;
+                    }
+                    entry.appendChild(document.createTextNode(text));
+                    countListElem.appendChild(entry);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
