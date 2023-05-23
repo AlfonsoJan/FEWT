@@ -129,6 +129,7 @@
             e.preventDefault();
             getEnzymButton.disabled = true;
             let enzym = enzymeInput.value;
+            toastr.info('Loading...');
             loadEnzym(enzym);
         };
         async function loadEnzym(enzym) {
