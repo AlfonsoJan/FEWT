@@ -63,6 +63,9 @@ let enzymeContainer = {
                 result.push({enzym: enzyme, "site": site, "locations": index})
             }
         }
+        if (result.length < 1) {
+            return {"Oops!": "None found in the database"}
+        }
         return result;
     }
 }
