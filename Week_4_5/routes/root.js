@@ -24,7 +24,19 @@ module.exports = async function (fastify, opts) {
 
 
   fastify.post('/api/v3/getcuttingsites', async function (request, reply) {
-    if (request.body.oligo.length < 10 | request.body.oligo.length > 100) {
+    console.log("Hi")
+
+    try {
+      request.body.oligo.length
+    } catch(err) {
+      reply
+        .code(500)
+        .header('Content-Type', 'application/json; charset=utf-8')
+        .send({ 500: 'No oligo sequence was given!' })
+        return;
+    }
+
+    if (request.body.oligo.length < 10 | request.body.oligo.length > 100 | request.body.oligo === undefined) {
       reply
         .code(500)
         .header('Content-Type', 'application/json; charset=utf-8')
