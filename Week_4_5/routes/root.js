@@ -57,4 +57,8 @@ module.exports = async function (fastify, opts) {
       .header('Content-Type', 'application/json; charset=utf-8')
       .send(result)
   })
+
+  fastify.get('/client', function (request, reply) {
+    return reply.sendFile('index.html');
+  })
 }
