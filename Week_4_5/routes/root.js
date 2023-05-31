@@ -24,7 +24,6 @@ module.exports = async function (fastify, opts) {
 
 
   fastify.post('/api/v3/getcuttingsites', async function (request, reply) {
-    console.log("Hi")
 
     try {
       request.body.oligo.length
@@ -52,6 +51,13 @@ module.exports = async function (fastify, opts) {
     }
     enzymeContainer.sequence = request.body.oligo;
     let result = enzymeContainer.getCuttingSites();
+    if (result.length < 1) {
+      reply
+        .code(404)
+        .header('Content-Type', 'application/json; charset=utf-8')
+        .send({404: "None found in the database"})
+      return;
+    }
     reply
       .code(200)
       .header('Content-Type', 'application/json; charset=utf-8')

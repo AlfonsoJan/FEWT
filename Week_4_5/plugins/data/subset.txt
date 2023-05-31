@@ -1,0 +1,309 @@
+Enzyme (Synonym)                  Site
+AanI (PsiI)                       TTA^TAA
+AaqI (ApaLI)                      GTGCAC
+Abr4036II                         GRTYGACC
+AccIX                             GACRAC
+AccIX                             GTYGTC
+Acc65V                            GACGCA
+AcpI (AsuII)                      TT^CGAA
+Acs1421I (SalI)                   GTCGAC
+Adh6U21I                          GAANCAG
+AgeI                              A^CCGGT
+AglI (EcoRII)                     CC^WGG
+AhaI (CauII)                      CC^SGG
+AmaSI (NruI)                      TCGCGA
+AmeI (ApaLI)                      GTGCAC
+Aod1I                             GATCNAC
+Asp78I (StuI)                     AGGCCT
+AspA2I (AvrII)                    C^CTAGG
+AspBHII (PpuMI)                   RG^GWCCY
+Asp8HI (XhoII)                    RGATCY
+Asp35HI (BsmI)                    G^CATTC
+Asp36HI (BsmI)                    GAATGCN^
+Asp50HI (BsmI)                    G^CATTC
+AspNIH4III                        AAGAACB
+AsuSAI (SauI)                     CCTNAGG
+AteTI                             GGGRAG
+Awo1030IV                         GCCRAG
+BavAII (AsuI)                     G^GNCC
+Bbf7411I (BspMII)                 TCCGGA
+Bbr215II (BloAII)                 GAGGAC
+R1.BbrUI (NarI)                   GGCGCC
+Bce3081I                          CTCCTA
+BceDI (BclI)                      TGATCA
+BciBI (ClaI)                      AT^CGAT
+Bco11035III                       GAAGCY
+Bco11035III                       RGCTTC
+BcoDI (BsmAI)                     GTCTCN^
+BcrAI (Ksp632I)                   GAAGAG
+Bfr9343DIII (BfaSII)              CTCCNTC
+BlfI (BspMII)                     T^CCGGA
+Bli49I (Eco31I)                   GGTCTC
+Bli161I (Eco31I)                  GGTCTC
+Bli585I (ClaI)                    ATCGAT
+Blo11818I (BloAII)                GTCCTC
+BmaCI (PvuI)                      CGATCG
+BmgAI (BseSI)                     GKGCMC
+BmgT120I (AsuI)                   G^GNCC
+BpeI (HindIII)                    AAGCTT
+Bps6700III                        TACCNAG
+BpuCI (EciI)                      GGCGGA
+BsaWI (BetI)                      W^CCGGW
+BscOI (SphI)                      GCATGC
+BshGI (EcoRII)                    CC^WGG
+BshTI (AgeI)                      A^CCGGT
+BsiKI (BstEII)                    G^GTNACC
+Bsm6I (HgiAI)                     GWGCW^C
+Bsp4I (ClaI)                      ATCGAT
+Bsp119I (AsuII)                   TT^CGAA
+Bsp129I (XhoI)                    CTCGAG
+Bsp143II (HaeII)                  RGCGC^Y
+Bsp233I (BspMII)                  TCCGGA
+Bsp460III                         CGCGCAG
+Bsp153AI (PvuII)                  CAG^CTG
+BspAAII (XbaI)                    T^CTAGA
+BspCI (PvuI)                      CGAT^CG
+BspDI (ClaI)                      AT^CGAT
+BspGI                             GTCCAG
+BspH22I (AsuII)                   TTCGAA
+BspLU11I                          A^CATGT
+BspVI (BbvII)                     GAAGAC
+BspZEI (ClaI)                     AT^CGAT
+BsrBI                             CCG^CTC
+BsrEI (Ksp632I)                   CTCTTC
+BsrEI (Ksp632I)                   GAAGAG
+BsrHI (BsePI)                     GCGCGC
+BssHI (XhoI)                      C^TCGAG
+BssNAI (SnaI)                     GTA^TAC
+BssT1I (StyI)                     C^CWWGG
+Bst11I (BsrI)                     C^CAGT
+Bst98I (AflII)                    C^TTAAG
+Bst100I (EcoRII)                  CC^WGG
+Bst158I (Ksp632I)                 GAAGAG
+Bst170II (HindIII)                AAGCTT
+BstBZ153I (BsePI)                 G^CGCGC
+BstDSI (DsaI)                     C^CRYGG
+BstHI (XhoI)                      CTCGAG
+BstNI (EcoRII)                    CC^WGG
+BstNSI (NspI)                     RCATG^Y
+BstRI (EcoRV)                     GATATC
+BstSNI (SnaBI)                    TAC^GTA
+Bst2UI (EcoRII)                   CC^WGG
+BstZ9I (MluI)                     ACGCGT
+BstZ10II (BclI)                   TGATCA
+Bsu3610I (PcaII)                  GACGAG
+BsuJPCI (PcaII)                   GACGAG
+BsxI (BfiI)                       CCCAGT
+BtgAI (SalI)                      GTCGAC
+BthDI (EcoRII)                    CC^WGG
+BthEI (EcoRII)                    CC^WGG
+BvuI (HgiJII)                     GRGCY^C
+BvuBI (SplI)                      C^GTACG
+Cas2I (PvuI)                      CGATCG
+Cba13II                           ATTCCT
+Cco104626IV (Cco14983V)           THACCC
+Cdi1678I (CdpI)                   GCGGAG
+CfaI (ApoI)                       R^AATTY
+CflI (PstI)                       CTGCA^G
+Cfr43I (SacII)                    CCGCGG
+CfrMH15IV (Kpn327I)               GACATC
+Cfupf3II                          GARCAG
+Cgl13032II                        CCVTCGT
+Cje263III (CjeNIII)               GKAAYG
+Cje263III (CjeNIII)               CRTTMC
+Csp68KIII (AvaIII)                ATGCA^T
+DraII                             RG^GNCCY
+DrdVI                             GGCTGC
+DsaI                              C^CRYGG
+DvuIII                            CACNCAC
+Ecl133I (PstI)                    CTGCAG
+Ecl234I                           CGGNAAG
+Ecl593I (PstI)                    CTGCAG
+EclXI (XmaIII)                    C^GGCCG
+Eco42I (Eco31I)                   GGTCTC
+Eco47III                          AGC^GCT
+Eco48I (PstI)                     CTGCAG
+Eco51I (Eco31I)                   GGTCTC
+Eco56I (NaeI)                     G^CCGGC
+Eco65I (HindIII)                  AAGCTT
+Eco78I (NarI)                     GGC^GCC
+Eco81I (SauI)                     CC^TNAGG
+Eco92I (SacII)                    CCGCGG
+Eco101I (Eco31I)                  GGTCTC
+Eco120I (Eco31I)                  GGTCTC
+Eco125I (Eco57I)                  CTGAAG
+Eco129I (Eco31I)                  GGTCTC
+Eco143I (BsePI)                   GCGCGC
+Eco0162II (EcoNIH6II)             ATGAAG
+Eco191I (Eco31I)                  GGTCTC
+Eco208II (StyI)                   CCWWGG
+Eco225I (Eco31I)                  GGTCTC
+Eco233I (Eco31I)                  GGTCTC
+Eco240I (Eco31I)                  GGTCTC
+Eco246I (Eco31I)                  GGTCTC
+Eco4465II                         GAAABCC
+Eco9234II (Eco4465II)             GGVTTTC
+Eco9272I (Eco57I)                 CTTCAG
+Eco9322I (Eco43896II)             CRARCAG
+EcoA4I (Eco31I)                   GGTCTCN^
+EcoBE25II (SmaUMH5I)              CTTGAC
+EcoGIII (PstI)                    CTGCAG
+EcoHSI                            GGTAAG
+EcoRI                             G^AATTC
+Eco53kI (SacI)                    GAG^CTC
+EheI (NarI)                       GGC^GCC
+ErpI (AvaII)                      G^GWCC
+Esp23I (Esp3I)                    GAGACG
+Esp3007I                          CAGAAG
+Esp3007I                          CTTCTG
+EspCI (BspMI)                     GCAGGT
+EspHK26I (BspMII)                 TCCGGA
+Fba202Z8II                        CCTTCT
+FblI (AccI)                       GT^MKAC
+Fco1691IV                         GCVGAG
+FdiII (MstI)                      TGC^GCA
+FseI                              GGCCGG^CC
+FspPK15I                          GARGAAG
+GalI (SacII)                      CCGC^GG
+GauT27I                           CGCGCAGG
+GsaI (BseYI)                      GCTGG^G
+HgiDI (AcyI)                      GR^CGYC
+HgiHII (AcyI)                     GR^CGYC
+HgiJI (AvaII)                     G^GWCC
+Hin5III (HindIII)                 AAGCTT
+Hin8I (AcyI)                      GRCGYC
+HinJCI (HindII)                   GTY^RAC
+KpnI                              GGTAC^C
+Kpn160II (EcoMVII)                GATGNTG
+KteAI (SmaI)                      CCCGGG
+LfuRB21I (CstMI)                  AAGGAG
+Lmo540I (Lmo911II)                TAGRAG
+Lmo6907II (Lmo911II)              TAGRAG
+Lra68I                            CTNGAAC
+MaeK81I (SplI)                    C^GTACG
+MbiI (BsrBI)                      GAG^CGG
+Mbo26II (MtuHN878II)              CACGCAG
+McaI (XhoI)                       CTCGAG
+MchI (NarI)                       GG^CGCC
+MflI (XhoII)                      R^GATCY
+Mha185III (Eco57I)                CTTCAG
+Mlu23I (BamHI)                    G^GATCC
+Mlu211III                         AGCCCA
+Mlu211III                         TGGGCT
+MmaI (PstI)                       CTGCAG
+MrhI (XhoI)                       CTCGAG
+MroNI (NaeI)                      G^CCGGC
+MscAI (XhoI)                      CTCGAG
+Msp20I (BalI)                     TGG^CCA
+MspA1I (NspBII)                   CMG^CKG
+MspF392I                          CCCAATV
+MspSC27II                         GTCGCGG
+Mtu18II (MtuHN878II)              CTGCGTG
+Mtu1008III (MtuHN878II)           CACGCAG
+Mtu1457III (MtuHN878II)           CTGCGTG
+Mtu1460III (MtuHN878II)           CACGCAG
+MtuHN878II                        CTGCGTG
+Mva1269I (BsmI)                   GAATGCN^
+MwhI (HpaI)                       GTTAAC
+Nar7I (Eco57MI)                   CTYCAG
+NflHI (CdpI)                      GCGGAG
+NgoJIII (SacII)                   CCGCGG
+NgoMIII (SacII)                   CCGCGG
+NgoPIII (SacII)                   CCGC^GG
+NlaSI (SacII)                     CCGCGG
+NsiI (AvaIII)                     ATGCA^T
+NsiCI (EcoRV)                     GAT^ATC
+NspEI (AvaI)                      CYCGRG
+Pac1110I (BamHI)                  GGATCC
+Pae7I (SacII)                     CCGCGG
+Pae25I (PstI)                     CTGCAG
+Pae44I (SacII)                    CCGCGG
+Pae5kI (SacII)                    CCGC^GG
+PpaAI (AsuII)                     TT^CGAA
+PpeI (ApaI)                       GGGCC^C
+PpuXI (PpuMI)                     RG^GWCCY
+PscI (BspLU11I)                   A^CATGT
+Pse18267I                         CTTCGGY
+PshBI (VspI)                      AT^TAAT
+Psp5I (PvuII)                     CAGCTG
+PspD7DII                          CTCGCGG
+PspFI (BseYI)                     G^CTGGG
+PspSI (PstI)                      CTGCAG
+Pst273I                           GATCGAG
+Pun14627II (PvuII)                CAG^CTG
+Rba2021I                          DCTCGTG
+RcaI (BspHI)                      T^CATGA
+Rer8036I (Rsp008IV)               CTGCGT
+RrhI (SalI)                       GTCGAC
+RshI (PvuI)                       CGAT^CG
+Rsp008IV                          CTGCGT
+Saf8902III                        CAATNAG
+Sag901I                           GCAAAT
+Sal1974I (XhoI)                   CTCGAG
+SanDI                             GG^GWCCC
+Sau96I (AsuI)                     G^GNCC
+SdiAI (XhoI)                      CTCGAG
+SenS317IV (SenTFIV)               CTGATC
+SenSARA26III                      CTGYGT
+SepMI (EcoRV)                     GAT^ATC
+SfrI (SacII)                      CCGCGG
+SfuI (AsuII)                      TT^CGAA
+SkaII (PstI)                      CTGCAG
+SmaI                              CCC^GGG
+SmaUMH5I                          GTCAAG
+Sna507VIII                        CTCAAYG
+SolI (BamHI)                      G^GATCC
+SonI (ClaI)                       ATCGAT
+SpmI (ClaI)                       AT^CGAT
+SrifpI (XhoI)                     CTCGAG
+Srl32DII (EcoRI)                  G^AATTC
+Srl76DI (AhaIII)                  TTTAAA
+SsmI (PstII)                      CATCAG
+Ssm5I (SacI)                      GAGCTC
+Ssp1I (AsuII)                     TT^CGAA
+Ssp4I (XhoI)                      CTCGAG
+Ssp42I (AsuII)                    TTCGAA
+SspJII (AcyI)                     GRCGYC
+SspM1III (HgiCI)                  GGYRCC
+Sst12I (PstI)                     CTGCA^G
+StrI (XhoI)                       C^TCGAG
+SurI (BamHI)                      G^GATCC
+TfiI                              G^AWTC
+TpyTP2I                           CTTGGT
+Tsp1I (BsrI)                      C^CAGT
+Tsp45I                            ^GTSAC
+Tsp504I (XmaIII)                  CGGCCG
+Tsp514I (BspMII)                  TCCGGA
+TspARh3I                          GRACGAC
+Uba46I (PstI)                     CTGCAG
+Uba83I (HindIII)                  AAGCTT
+Uba86I (KpnI)                     GGTACC
+Uba87I (KpnI)                     GGTACC
+Uba1119I (PstI)                   CTGCAG
+Uba1127I (HgiCI)                  GGYRCC
+Uba1142I (HgiJII)                 GRGCYC
+Uba1158I (ScaI)                   AGTACT
+Uba1173I (BamHI)                  GGATCC
+Uba1238I (ClaI)                   ATCGAT
+Uba1291I (BstEII)                 GGTNACC
+Uba1311I (StyI)                   CCWWGG
+Uba1320I (EspI)                   GCTNAGC
+Uba1334I (BamHI)                  GGATCC
+Uba1357I (HgiJII)                 GRGCYC
+Uba1398I (BamHI)                  GGATCC
+Uba1411I (PstI)                   CTGCAG
+Uba1448I (XhoI)                   CTCGAG
+UbaN7I (Ksp632I)                  CTCTTC
+Umi5I (AvaI)                      CYCGRG
+Van9116I                          CCKAAG
+Van9116I                          CTTMGG
+VchO70I (NruI)                    TCGCGA
+VpaO5I (Ksp632I)                  CTCTTC
+Vtu19109I                         CACRAYC
+Vtu19109I                         GRTYGTG
+VvuEnv1II (RdeGBI)                CCGCAG
+XbaI                              T^CTAGA
+Xgl3220I (PvuI)                   CGATCG
+ZanI (EcoRII)                     CC^WGG
+ZraI (AatII)                      GAC^GTC
+Zsp2I (AvaIII)                    ATGCA^T

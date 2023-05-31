@@ -63,9 +63,6 @@ let enzymeContainer = {
                 result.push({enzym: enzyme, "site": site, "locations": index})
             }
         }
-        if (result.length < 1) {
-            return {"Oops!": "None found in the database"}
-        }
         return result;
     }
 }
@@ -91,7 +88,7 @@ function parseData(data) {
 
 
 async function getEnzymeContainer() {
-    let data = await readData("./plugins/data/restriction_enzymes_table-rebase.txt");
+    let data = await readData("./plugins/data/subset.txt");
     parseData(data);
     return enzymeContainer;
 }
