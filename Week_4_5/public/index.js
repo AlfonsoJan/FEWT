@@ -3,6 +3,7 @@ let element = {
     sequence: document.getElementById("sequence"),
     formElem: document.getElementById("sequence-form"),
     countListElem: document.getElementById("countList"),
+    tbodyRef: document.getElementById("tableBody")
 }
 
 let pageSetters = {
@@ -32,24 +33,21 @@ let helperFunction = {
         return !isNaN(value) && (function(x) { return (x | 0) === x; })(parseFloat(value))
     },
     parseResult(data) {
-        let index = -50;
-        let updatedLocations = data.map(i => {
-            index += 50;
-            if (i === undefined) {return [];}
-            return i.map(j => {
-                let t = parseInt(j.locations) + index;
-                return t;
+        data.filter(element => element !== undefined)
+            .map(enzymes => {
+                let seq = enzymes.seq;
+                enzymes.data.map(i => {
+                    let newRow = element.tbodyRef.insertRow();
+                    let cell1 = newRow.insertCell(0);
+                    cell1.innerHTML  = seq
+                    let cell2 = newRow.insertCell(1);
+                    cell2.innerHTML = i.enzym
+                    let cell3 = newRow.insertCell(2);
+                    cell3.innerHTML = i.site
+                    let cell4 = newRow.insertCell(3);
+                    cell4.innerHTML = i.locations
+                })
             })
-            
-        }).flat()
-        data.flat().filter(element => element !== undefined).map((curr, index) => {
-            return {enzym: curr.enzym, site: curr.site, locations: updatedLocations[index]}
-        }).map(enzymes => {
-            let entry = document.createElement('li');
-            let text = `Enzyme: ${enzymes.enzym}; Site: ${enzymes.site}; Location: ${enzymes.locations}`;
-            entry.appendChild(document.createTextNode(text));
-            element.countListElem.appendChild(entry);
-        });
     },
     checkSequence() {
         pageSetters.hideStuff();
@@ -75,7 +73,7 @@ let helperFunction = {
             });
             if (resp.ok) {
                 let data = await resp.json();
-                return data;
+                return {seq: u.seq, data: data};
             }
         }))
         helperFunction.parseResult(results);
